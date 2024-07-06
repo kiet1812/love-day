@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/giphy.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-attachment: fixed;
+}
+
+.headers {
+    background-color: rgba(255, 230, 254, 0.712);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 98%;
+    height: 98%;
+    margin: 1% 1%;
+    border-radius: 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card.profile {
+    overflow: hidden;
+    width: 405px;
+    height: 570px;
+    position: relative; /* Để chứa pseudo-element */
+    background-image: url('https://ptk2008.click/love-day/ptkdepzai/img/background-2.jpg');
+    background-size: cover; /* Đảm bảo ảnh nền phủ toàn bộ thẻ */
+    flex: none;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.card.profile::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Màu trắng nhạt với độ trong suốt */
+    z-index: 1; /* Đảm bảo lớp phủ nằm trên cùng */
+}
+
+
+.card.mid {
+    background-color: transparent;
+    position: relative;
+    bottom: 30px;
+    width: 300px;
+}
+
+.text.time {
+    font-family: 'Itim', sans-serif;
+    font-weight: normal;
+}
+
+.gif {
+    width: 100px;
+    height: auto;
+    font-size: 100px;
+}
+
+.hr {
+    background: linear-gradient(90deg, rgba(255, 160, 194, 0.9528186274509804) 0%, rgba(255, 0, 90, 1) 100%);
+    width: 260px;
+    height: 7px;
+    border-radius: 5px;
+    margin-top: 50px;
+    z-index: 999;
+}
+
+.left {
+    margin-left: 50px;
+    animation-name: moveLeft;
+}
+
+.right {
+    margin-right: 50px;
+    animation-name: moveRight;
+}
+
+@keyframes moveLeft {
+    from {
+        margin-left: 10px;
+    }
+    to {
+        margin-left: 50px;
+    }
+}
+
+@keyframes moveRight {
+    from {
+        margin-right: 10px;
+    }
+    to {
+        margin-right: 50px;
+    }
+}
+
+.icon {
+    font-size: 30px;
+    color: black;
+    transition: 0.3s;
+}
+
+.icon:hover {
+    color: #ff78a8;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.picture {
+    width: 210px;
+    height: 210px;
+    background: linear-gradient(23deg, #ffc900 0%, rgba(255,14,94,1) 57%, rgba(211,0,197,1) 100%);
+    border-radius: 50%;
+    margin-top: 50px;
+    position: relative;
+    z-index: 3; /* Đặt z-index cho phần tử .picture */
+}
+
+.picture::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 202px;
+    height: 202px;
+    border-radius: 50%;
+    z-index: 2; /* Đặt z-index cho phần tử ::before, thấp hơn .picture để nằm dưới */
+}
+
+.logo {
+    width: 195px;
+    height: 195px;
+    border-radius: 50%;
+    font-size: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4; /* Đặt z-index cho phần tử .logo để nằm trên cùng */
+}
+
+
+.text {
+    margin-top: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    z-index: 999;
+}
+
+.info {
+    z-index: 999;
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-love {
+    font-size: 100px;
+}
+#text-footer{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-align: center;
+    cursor: pointer; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.rainbow{
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+    background-image: linear-gradient(45deg, aqua, blue, magenta, red, orange, yellow, green, cyan, blue, violet, cyan, skyblue);
+    background-size: 400% 400%;
+    animation: animate 15s linear infinite;
+}
+@keyframes animate{
+    0%{
+      background-position: 0 0;
+    }
+    25% {
+      background-position: 100% 0;
+    }
+    50%{
+      background-position: 100% 100%
+    }
+    75% {
+      background-position: 0 100%;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}
+/* slow */
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 100%;
+    }
+  }
+  
+  @-webkit-keyframes snowflakes-shake {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px);
+    }
+  }
+  
+  @keyframes snowflakes-fall {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 100%;
+    }
+  }
+  
+  @keyframes snowflakes-shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(80px);
+    }
+  }
+  
+  .snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+  }
+  
+  .snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s;
+  }
+  
+  .snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s;
+  }
+  
+  .snowflake:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, 0.5s;
+    animation-delay: 6s, 0.5s;
+  }
+  
+  .snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s;
+  }
+  
+  .snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s;
+  }
+  
+  .snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s;
+  }
+  
+  .snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s;
+  }
+  
+  .snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s;
+  }
+  
+  .snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s;
+  }
+  
+  .snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s;
+  }
+  
+  .snowflake:nth-of-type(10) {
+    left: 25%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 2s, 0s;
+  }
+  
+  .snowflake:nth-of-type(11) {
+    left: 65%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 4s, 2.5s;
+  }
+  .snowflake img {
+    height: 30px;
+  }
+  
+@media (max-width: 1030px) {
+    .headers {
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card.profile.left, .card.profile.right {
+        animation: none;
+        width: 90%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .card.mid {
+        width: 90%;
+        margin: 10px 0;
+        position: unset;
+    }
+
+    .hr {
+        margin-top: 30px;
+    }
+
+    .info {
+        margin-bottom: 50px;
+    }
+}
